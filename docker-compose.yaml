@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  smart_screen:
+    build:
+      context: ./backend
+    image: backend:1.0.0
+    container_name: backend
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/mydemo
+
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - backend
