@@ -9,19 +9,20 @@ services:
     restart: always
     ports:
       - "8000:8000"
+      - "80:80"
     volumes:
       - .:/mydemo
   
-  frontend:
-      restart: unless-stopped
-      image: staticfloat/nginx-certbot
-      ports:
-          - 80:80/tcp
-          - 443:443/tcp
-      environment:
-          CERTBOT_EMAIL: erdgnsahn@gmail.com
-      volumes:
-        - ./conf.d:/etc/nginx/user.conf.d:ro
-        - letsencrypt:/etc/letsencrypt
-volumes:
-  letsencrypt:
+#   frontend:
+#       restart: unless-stopped
+#       image: staticfloat/nginx-certbot
+#       ports:
+#           - 80:80/tcp
+#           - 443:443/tcp
+#       environment:
+#           CERTBOT_EMAIL: erdgnsahn@gmail.com
+#       volumes:
+#         - ./conf.d:/etc/nginx/user.conf.d:ro
+#         - letsencrypt:/etc/letsencrypt
+# volumes:
+#   letsencrypt:
