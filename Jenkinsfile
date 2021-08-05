@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo "Clarusway_Way to Reinvent Yourself111"
-                sh 'echo using shell within Jenkinsfile111'
-                echo 'not using shell in the Jenkinsfile111'
+                sh "cd /var/lib/jenkins/workspace/my-django"
+                sh 'docker-compose up -d'
+                echo 'it works'
             }
         }
     }
