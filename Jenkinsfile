@@ -7,7 +7,7 @@ pipeline {
         stage('build') {
             steps {
                 sh "cd /var/lib/jenkins/workspace/my-django"
-                sh '/usr/local/bin/docker-compose up -d'
+                sh 'sudo /usr/local/bin/docker-compose up -d'
                 echo 'it works'
             }
         }
