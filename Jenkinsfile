@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'main' }
+    environment {
+        PATH = "$PATH:/usr/local/bin/docker-compose"
+    }
     stages {
         stage('build') {
             steps {
